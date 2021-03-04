@@ -11,7 +11,8 @@ gem 'jbuilder',     '2.7.0'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
-  gem 'byebug',  '9.0.6', platform: :mri
+	gem 'byebug',  '9.0.6', platform: :mri
+	gem 'spring-commands-rspec'
 end
 
 group :development do
@@ -23,12 +24,21 @@ end
 
 group :test do
   gem 'rails-controller-testing', '1.0.2'
-  gem 'minitest',                 '5.10.3'
   gem 'minitest-reporters',       '1.1.14'
-  gem 'guard',                    '2.16.2'
-  gem 'guard-minitest',           '2.4.4'
+  gem 'guard',                    '2.13.0'
+	gem 'guard-minitest',           '2.4.4'
+	gem 'factory_bot_rails'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'capybara', '~> 2.13'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'selenium-webdriver'
 end
 
 group :production do
   gem 'pg', '0.20.0'
 end
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
