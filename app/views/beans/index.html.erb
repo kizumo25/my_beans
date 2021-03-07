@@ -1,5 +1,11 @@
-<h1>Beans#index</h1>
-<p>Find me in app/views/beans/index.html.erb</p>
+<% provide(:title, "コーヒー豆一覧") %>
+
+<h1>コーヒー豆たち</h1>
+<p>ここではコーヒー豆の一覧がご覧なれます。</p>
 <% @beans.each do |bean| %>
-	<%= bean.name %>
+	<ul class="beans">
+		<li>
+			<%= bean.name %>
+		</li>
+	</ul>
 <% end %>
