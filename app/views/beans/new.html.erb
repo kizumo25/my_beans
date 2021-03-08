@@ -1,0 +1,13 @@
+<h1>コーヒーの新規登録</h1>
+
+<div class="nav justify-content-end">
+	<%= link_to 'コーヒー一覧', beans_path, class: 'nav-link' %>
+</div>
+
+<%= form_for(@bean) do |f| %>
+	<div class="name">
+		<%= f.label :name %>
+		<%= f.text_field :name, class: 'form-control', id: 'bean_name' %>
+	</div>
+	<%= f.submit 'コーヒーを登録', class: 'btn btn-primary' %>
+<% end %>

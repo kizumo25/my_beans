@@ -5,10 +5,12 @@ gem 'puma',           '3.9.1'
 gem 'sass-rails',     '5.0.6'
 gem 'uglifier',       '3.2.0'
 gem 'coffee-rails',   '4.2.2'
-gem 'jquery-rails',   '4.3.1'
 gem 'turbolinks',     '5.0.1'
 gem 'jbuilder',       '2.7.0'
 gem 'bootstrap-sass', '3.3.7'
+gem 'jquery-rails',   '4.3.1'
+gem 'carrierwave',    '1.2.2'
+gem 'mini_magick',    '4.7.0'
 
 group :development, :test do
   gem 'mysql2', '~> 0.4.4'
@@ -39,7 +41,8 @@ group :test do
 end
 
 group :production do
-  gem 'mysql2', '~> 0.4.4'
+	gem 'mysql2', '~> 0.4.4'
+	gem 'fog', 		'1.42'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
