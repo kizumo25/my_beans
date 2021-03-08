@@ -6,8 +6,10 @@
 	<% @beans.each do |bean| %>
 		<div class="col-md-3">
 			<div class="card">
-				<%= link_to bean.name, bean_path(bean) %>
-				<%= image_tag bean.picture.url if bean.picture? %>
+				<div class="card-img-top">
+					<%= image_tag bean.picture.url if bean.picture? %>
+				</div>
+				<%= link_to bean.name, bean %>
 			</div>
 		</div>
 	<% end %>
