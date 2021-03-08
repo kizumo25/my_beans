@@ -7,6 +7,7 @@
 		<div class="col-md-3">
 			<div class="card">
 				<%= link_to bean.name, bean_path(bean) %>
+				<%= image_tag bean.picture.url if bean.picture? %>
 			</div>
 		</div>
 	<% end %>
