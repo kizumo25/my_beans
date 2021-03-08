@@ -1,0 +1,8 @@
+<% provide(:title, @bean.name) %>
+
+<h1>show</h1>
+<%= @bean.name %>
+
+<%= link_to '削除', @bean, method: :delete, class: 'btn btn-danger mr-3',
+                                       data: { confirm: "本当に削除してもよろしいですか？" } %>
+<%= link_to '編集', edit_bean_path(@bean), class: 'btn btn-primary mr-3' %>

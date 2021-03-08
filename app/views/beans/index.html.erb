@@ -1,0 +1,13 @@
+<h1>コーヒー豆たち</h1>
+<p>ここではコーヒー豆の一覧がご覧なれます。</p>
+
+<%= link_to 'コーヒー登録', new_bean_path, class: 'btn btn-primary' %>
+<div class="row">
+	<% @beans.each do |bean| %>
+		<div class="col-md-3">
+			<div class="card">
+				<%= link_to bean.name, bean_path(bean) %>
+			</div>
+		</div>
+	<% end %>
+</div>

@@ -1,0 +1,13 @@
+<h1>コーヒー豆の編集ページ</h1>
+
+<div class="nav justify-content-end">
+	<%= link_to 'コーヒー一覧', beans_path, class: 'nav-link' %>
+</div>
+
+<%= form_for(@bean) do |f| %>
+	<div class="name">
+		<%= f.label :name %>
+		<%= f.text_field :name, class: 'form-control', id: 'bean_name' %>
+	</div>
+	<%= f.submit '編集完了する', class: 'btn btn-primary' %>
+<% end %>
