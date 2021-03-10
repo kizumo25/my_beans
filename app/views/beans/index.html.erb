@@ -1,15 +1,18 @@
-<h1>コーヒー豆たち</h1>
-<p>ここではコーヒー豆の一覧がご覧なれます。</p>
+<% provide(:title, "Coffee list") %>
 
-<%= link_to 'コーヒー登録', new_bean_path, class: 'btn btn-primary' %>
 <div class="row">
+	<h1>一覧</h1>
+
+	<div class="registration_btn">
+		<%= link_to 'コーヒー登録', new_bean_path, class: 'btn btn-primary' %>
+	</div>
 	<% @beans.each do |bean| %>
 		<div class="col-md-3">
 			<div class="card">
 				<div class="card-img-top">
-					<%= image_tag bean.picture.url if bean.picture? %>
+					<%= image_tag bean.picture.url :size => '200x200' if bean.picture? %>
 				</div>
-				<%= link_to bean.name, bean %>
+				<b><%= link_to bean.name, bean %></b>
 			</div>
 		</div>
 	<% end %>
