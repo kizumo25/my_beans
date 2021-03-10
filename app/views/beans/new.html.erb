@@ -1,25 +1,26 @@
-<h1>コーヒーの新規登録</h1>
+<% provide(:title, "Registration") %>
 
-<div class="nav justify-content-end">
-	<%= link_to 'コーヒー一覧', beans_path, class: 'nav-link' %>
-</div>
+<div class="row">
+	<h1>新規登録</h1>
 
-<%= form_for(@bean) do |f| %>
-	<div class="name">
-		<%= f.label :name %>
-		<%= f.text_field :name, class: 'form-control', id: 'bean_name' %>
+	<%= render '/beans/back_coffee_list' %>
+
+	<div class="registration_form">
+		<%= form_for(@bean) do |f| %>
+			<div class="name">
+				<%= f.label :name %>
+				<%= f.text_field :name, class: 'form-control', id: 'bean_name', style: "width:200px;" %>
+			</div>
+			<div class="registraion_picture">
+				<span class="picture">
+					<%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+				</span>
+			</div>
+			<div class="done_btn">
+				<%= f.submit 'コーヒーを登録', class: 'btn btn-primary' %>
+			</div>
+		<% end %>
+
+		<%= render '/beans/alert_picture' %>
 	</div>
-	<%= f.submit 'コーヒーを登録', class: 'btn btn-primary' %>
-	<span class="picture">
-  	<%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-  </span>
-<% end %>
-
-<script type="text/javascript">
-  $('#micropost_picture').bind('change', function() {
-    var size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 5) {
-      alert('Maximum file size is 5MB. Please choose a smaller file.');
-    }
-  });
-</script>
+</div>

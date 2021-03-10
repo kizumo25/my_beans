@@ -1,13 +1,18 @@
 <% provide(:title, @bean.name) %>
 
-<div class="col-md-3">
-			<div class="card">
-				<%= link_to @bean.name, @bean %>
-				<div class="card-img-top">
-					<%= image_tag @bean.picture.url if @bean.picture? %>
-				</div>
-				<%= link_to '編集', edit_bean_path(@bean), class: 'btn btn-primary mr-3' %>
-				<%= link_to '削除', @bean, method: :delete, class: 'btn btn-danger mr-3',
-																										data: { confirm: "本当に削除してもよろしいですか？" } %>
-			</div>
+<div class="row">
+	<h1><%= @bean.name %></h1>
+
+	<%= render '/beans/back_coffee_list' %>
+
+	<div class="col-md-3">
+		<div class="show_img">
+			<%= image_tag @bean.picture.url, size: '300x200' if @bean.picture? %>
 		</div>
+	</div>
+</div>
+<div class="show_btn">
+	<%= link_to '編集', edit_bean_path(@bean), class: 'btn btn-primary mr-3' %>
+	<%= link_to '削除', @bean, method: :delete, class: 'btn btn-danger mr-3',
+																							data: { confirm: "本当に削除してもよろしいですか？" } %>
+</div>
